@@ -30,3 +30,8 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
+### build the server
+Open RESTful CRUD project in eclipse and build it as maven project.<br>
+Open [http://localhost:8080/RESTfulCRUD/rest/jobs](http://localhost:8080/RESTfulCRUD/rest/jobs) to view it in the browser.
+
+
