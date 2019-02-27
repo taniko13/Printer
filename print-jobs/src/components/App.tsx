@@ -17,11 +17,11 @@ export class App extends React.Component<Props>{
   }
 
   componentDidMount() {
-    //this.props.appModel.printJobs();
+    this.props.appModel.printJobs();
   }
 
   componentDidUpdate() {
-    //this.props.appModel.printJobs();
+    this.props.appModel.printJobs();
   }
 
   componentWillMount() {
