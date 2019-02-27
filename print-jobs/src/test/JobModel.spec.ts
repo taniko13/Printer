@@ -6,7 +6,7 @@ describe('Job Model', () =>{
     let job: JobModel;
 
     beforeEach(function(){
-        job = new JobModel("Mock", 155);
+        job = new JobModel("id","Mock","queued", 155);
     })
 
     it('Verify name', () =>{

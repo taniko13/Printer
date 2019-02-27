@@ -20,11 +20,14 @@ export class CreateJob extends React.Component<Props>{
     }
 
     handleDuration = (event: any) => {
-        this.duration = event.target.value;
+        let num: number = event.target.value;
+        if (isNaN(num))
+            alert("Only numbers");
+        else
+            this.duration = event.target.value;
     }
 
     onSaveClick = () => {
-        console.log("Create Job: " + this.name + " " + this.duration);
         this.props.onSave(this.name, this.duration);
     }
     render() {
@@ -32,12 +35,13 @@ export class CreateJob extends React.Component<Props>{
         return (
             <div className='create-new-job'>
                 <div className='create-name'>
-                <p> Name: </p>
-                <input className='create-input' type="text" onChange={this.handleName} />
+                    <p> Name: </p>
+                    <input className='create-input' type="text" onChange={this.handleName} />
                 </div>
                 <div className='create-duratoin'>
-                <p>Duration: </p>
-                <input className='create-input' type="text" onChange={this.handleDuration} />
+                    <p>Duration: </p>
+                    <input className='create-input' type="text" onChange={this.handleDuration} />
+                    <p>seconds</p>
                 </div>
                 <div>
                     <button className='create-button' onClick={this.onSaveClick}>Save</button>

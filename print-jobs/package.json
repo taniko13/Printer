@@ -3,12 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/fetch-jsonp": "^1.0.0",
     "@types/react": "^16.8.4",
     "@types/react-dom": "^16.8.2",
     "axios": "^0.18.0",
+    "axios-jsonp-pro": "^1.1.4",
     "babel-preset-es2015": "^6.24.1",
+    "fetch-jsonp": "^1.1.3",
+    "guid-typescript": "^1.0.9",
     "mobx": "^5.9.0",
     "mobx-react": "^5.4.3",
+    "moment": "^2.24.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-scripts": "2.1.5"

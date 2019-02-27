@@ -5,7 +5,6 @@ import { observer } from 'mobx-react';
 import { CreateJob } from './createJob/CreateJob';
 
 import './App.css';
-//import axios from 'axios';
 
 type Props = {
   appModel: AppModel;
@@ -17,18 +16,19 @@ export class App extends React.Component<Props>{
     super(props);
   }
 
-  componentDidMount(){
-    this.props.appModel.printJobs();
+  componentDidMount() {
+    //this.props.appModel.printJobs();
   }
 
-  componentDidUpdate(){
-    this.props.appModel.printJobs();
+  componentDidUpdate() {
+    //this.props.appModel.printJobs();
   }
-   
-  /*componentWillMount(){
-    axios.get('http://localhost:8080/RESTfulCRUD/rest/jobs').then(response=> console.log(response)).catch(error => console.log("baaaaaa" + error));
-    axios.get('http://localhost:8080/RESTfulCRUD/rest/jobs').then(response=> console.log(response)).catch(error => console.log("baaaaaa" + error))
-  }*/
+
+  componentWillMount() {
+    // axios.get('http://localhost:8080/RESTfulCRUD/rest/jobs')
+    //   .then(response => console.log(response))
+    //   .catch(error => console.log( error))
+  }
 
   createNewJob = () => {
     this.props.appModel.shouldNewJob(true);
@@ -42,15 +42,15 @@ export class App extends React.Component<Props>{
     this.props.appModel.createNewJob(name, duration);
   }
 
-  deleteJob = (name:string) =>{
-    this.props.appModel.deleteJob(name);
+  deleteJob = (id: string) => {
+    this.props.appModel.deleteJob(id);
   }
 
-  moveJobUp = (name: string) =>{
+  moveJobUp = (name: string) => {
     this.props.appModel.moveJob(name, true);
   }
 
-  moveJobDown = (name: string) =>{
+  moveJobDown = (name: string) => {
     this.props.appModel.moveJob(name);
   }
 
@@ -71,6 +71,6 @@ export class App extends React.Component<Props>{
           {jobs.map(job => <Job key={job.name} model={job} deleteJob={this.deleteJob} moveUp={this.moveJobUp} moveDown={this.moveJobDown}></Job>)}
         </div>
       </div>
-    ); 
+    );
   }
 }

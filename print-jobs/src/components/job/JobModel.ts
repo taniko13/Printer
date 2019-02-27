@@ -1,5 +1,12 @@
 import { observable, action } from 'mobx';
+import moment from 'moment';
 
+export interface IJobModel {
+    id: string;
+    name: string;
+    duration: string;
+    status: string;
+}
 export class JobModel {
     key: string;
     name: string;
@@ -8,15 +15,15 @@ export class JobModel {
     @observable startTime: string;
     @observable endTime: string;
 
-    constructor(name: string, duration?: number, startTime?: string) {
-        this.key = name;
+    constructor(key: string, name: string, status: string, duration: number | string, startTime?: string, endTime?: string) {
+        this.key = key;
         this.name = name;
-        this.duration = duration || 100;
-        this.status = "queued";
-        let d = new Date();
-        this.startTime = startTime || d.toLocaleTimeString();
-        d.setSeconds(d.getSeconds() + this.duration);
-        this.endTime = d.toLocaleTimeString();
+        this.duration = +duration || 100;
+        this.status = status;
+        let d = moment(new Date());
+        this.startTime = startTime || d.format('LTS');
+        let e = d.add(duration, 'seconds');
+        this.endTime = endTime || d.format('LTS');
     }
 
     @action

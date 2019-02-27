@@ -14,8 +14,8 @@ type Props = {
 export class Job extends React.Component<Props>{
 
     deleteJob = () => {
-        const { name } = this.props.model;
-        this.props.deleteJob(name);
+        const { key } = this.props.model;
+        this.props.deleteJob(key);
     }
 
     moveUp = () => {
